@@ -1416,8 +1416,7 @@ spec:
 			previousUtilityTag := flags.PreviousUtilityTag
 			previousUtilityRegistry := flags.PreviousUtilityRegistry
 			if previousUtilityTag == "" {
-				previousUtilityTag, err = tests.DetectLatestUpstreamOfficialTag()
-				Expect(err).ToNot(HaveOccurred())
+				previousUtilityTag = previousImageTag
 				By(fmt.Sprintf("By Using detected tag %s for previous utility containers", previousUtilityTag))
 			} else {
 				By(fmt.Sprintf("By Using user defined tag %s for previous utility containers", previousUtilityTag))
